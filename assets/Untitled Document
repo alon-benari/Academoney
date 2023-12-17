@@ -1,0 +1,6 @@
+SELECT  * WHERE {
+      ?s  dbo:type :Private_university.
+      ?s dbo:endowment ?e.
+       ?s  geo:long ?long.
+      ?s geo:lat ?lat.
+      ?s geo:geometry ?point.

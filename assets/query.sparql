@@ -1,0 +1,72 @@
+
+
+
+SELECT  * WHERE {
+      ?s  dbo:type ?u.
+      ?s dbo:endowment ?e.
+       ?s  geo:long ?long.
+      ?s geo:lat ?lat.
+      ?s geo:geometry ?point.
+      ?s dbo:numberOfPostgraduateStudents ?postGrads.
+      ?s dbo:numberOfUndergraduateStudents ?underGrads.
+      ?s dbo:facultySize ?facutlySize.
+      ?s dbo:staff ?staff.
+      ?s dbo:president ?president.
+
+
+} Order by ?s
+
+
+SELECT * WHERE {
+     ?p dbo:notableStudent ?m.
+     ?p dbo:doctoralAdvisor ?da.
+     
+      ?p dbo:wikiPageID ?pid.
+      ?m dbo:wikiPageID ?mid.
+      ?m dbo:notableStudent ?mm.
+      ?mm dbo:wikiPageID ?mmid.
+
+
+}
+
+
+
+
+SELECT  *  {
+      ?s  rdfs:label  ?l.
+
+      ?s  dbo:state ?state.
+      ?state dbo:country ?c.
+      ?s dbo:endowment ?e.
+      # ?s  geo:long ?long.
+      #?s geo:lat ?lat.
+      ?s geo:geometry ?point.
+      ?s dbo:numberOfPostgraduateStudents ?postGrads.
+      ?s dbo:numberOfUndergraduateStudents ?underGrads.
+      ?s dbo:facultySize ?facutlySize.
+      ?s dbo:staff ?staff.
+     # ?s dbo:president ?president.
+
+filter (langMatches(lang(?l), "EN")).
+
+} order by ?s
+
+
+SELECT  *  {
+      ?s  rdf:type dbo:University.
+      ?s  dbo:state ?state.
+      ?state dbo:country  dbr:United_States.
+      ?s dbo:endowment ?e.
+     
+      ?s geo:geometry ?point.
+      #  ?s dbo:numberOfUndergraduateStudents ?underGrads.
+      #?s dbo:facultySize ?facutlySize.
+      #?s dbo:staff ?staff.
+ #?s dbo:numberOfPostgraduateStudents ?postGrads.
+
+     
+
+
+
+} order by ?s
+
